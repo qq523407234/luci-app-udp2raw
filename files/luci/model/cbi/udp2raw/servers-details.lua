@@ -61,7 +61,7 @@ o.password = true
 
 o = s:option(ListValue, "cipher_mode", translate("Cipher Mode"))
 for _, v in ipairs(cipher_modes) do o:value(v, v:lower()) end
-o.default = "aes128cbc"
+o.default = "xor"
 
 o = s:option(ListValue, "auth_mode", translate("Auth Mode"))
 for _, v in ipairs(auth_modes) do o:value(v, v:lower()) end
