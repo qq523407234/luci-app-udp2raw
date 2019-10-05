@@ -42,14 +42,17 @@ o.rmempty = false
 o = s:option(Value, "server_port", translate("Server Port"))
 o.datatype = "port"
 o.placeholder = "8080"
+o.rmempty = false
 
 o = s:option(Value, "listen_addr", translate("Local Listen Host"))
 o.datatype = "ipaddr"
-o.placeholder = "127.0.0.1"
+o.placeholder = "0.0.0.0"
+o.rmempty = false
 
 o = s:option(Value, "listen_port", translate("Local Listen Port"))
 o.datatype = "port"
 o.placeholder = "2080"
+o.rmempty = false
 
 o = s:option(ListValue, "raw_mode", translate("Raw Mode"))
 for _, v in ipairs(raw_modes) do o:value(v, v:lower()) end
