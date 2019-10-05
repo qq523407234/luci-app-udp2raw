@@ -60,14 +60,13 @@ create_config() {
 	[ -n "$cipher_mode" ] && echo "--cipher-mode ${cipher_mode}" >> $config_file
 	[ -n "$auth_mode" ] && echo "--auth-mode ${auth_mode}" >> $config_file
 
-	[ $auto_rule -eq 1 -a $keep_rule -eq 1 ] && echo "--auto-rule" >> $config_file
+	[ $auto_rule -eq 1 -a $keep_rule -eq 0 ] && echo "--auto-rule" >> $config_file
 	[ $auto_rule -eq 1 -a $keep_rule -eq 1 ] && echo "--keep-rule" >> $config_file
 
 	[ -n "$seq_mode" ] && echo "--seq-mode ${seq_mode}" >> $config_file
 	[ -n "$lower_level" ] && echo "--lower-level ${lower_level}" >> $config_file
 	[ -n "$source_ip" ] && echo "--source-ip ${source_ip}" >> $config_file
 	[ -n "$source_port" ] && echo "--source-port ${source_port}" >> $config_file
-	echo "--retry-on-error" >> $config_file
 
 	[ -n "$log_level" ] && echo "--log-level ${log_level}" >> $config_file
 	echo "--disable-color" >> $config_file
